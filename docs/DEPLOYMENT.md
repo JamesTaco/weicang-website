@@ -16,7 +16,15 @@ pnpm build
 pnpm start
 ```
 
-## Vercel
+## GitHub Pages（当前方案）
+
+- Next.js 使用 `output: export` 生成 `web/out/` 静态站点。
+- `.github/workflows/deploy-pages.yml` 在 `main` 分支更新时自动构建和发布。
+- GitHub 仓库 Settings → Pages → Source 选择 `GitHub Actions`。
+- `web/public/CNAME` 固定正式域名为 `weicangliving.com`。
+- Cloudflare apex 与 `www` 按 GitHub Pages 提供的 DNS 要求配置；保留所有邮件记录。
+
+## Vercel（备选）
 
 - Root Directory 设为 `web/`，Framework Preset 选择 Next.js。
 - 可选环境变量：`NEXT_PUBLIC_DONGFAN_URL=https://dongfanmatcha.com`。未设置时 CTA 自动回退 `/dongfan-matcha`。
@@ -37,4 +45,3 @@ pnpm start
 - 检查 390 / 430 / 768 / 1024 / 1440 / 1920 宽度和 reduced motion。
 - 确认 `_source/` / `底稿/` 不进入 Git 与 Vercel 部署。
 - 验证 HTTPS、www redirect，并确认 Cloudflare Email Routing 仍正常收信。
-
