@@ -21,7 +21,7 @@ pnpm start
 - Next.js 使用 `output: export` 生成 `web/out/` 静态站点。
 - 本地构建后将 `web/out/` 推送到独立的 `gh-pages` 分支，不依赖 GitHub Actions 或 workflow Token 权限。
 - GitHub 仓库 Settings → Pages → Source 选择 `Deploy from a branch`，分支选择 `gh-pages`、目录选择 `/(root)`。
-- `web/public/CNAME` 固定正式域名为 `weicangliving.com`。
+- `web/public/CNAME` 固定正式域名为 `www.weicangliving.com`。
 - Cloudflare apex 与 `www` 按 GitHub Pages 提供的 DNS 要求配置；保留所有邮件记录。
 
 ## Vercel（备选）
@@ -36,7 +36,7 @@ pnpm start
 2. 运行 `vercel domains inspect weicangliving.com`，以实时结果为准。
 3. 在 Cloudflare 仅新增 Vercel 要求的 apex A 与 `www` CNAME，初期设为 DNS only。
 4. 绝不更换 Nameserver，绝不删除或覆盖 MX、SPF、DKIM、Email Routing 或 mail-related TXT。
-5. 等待验证与 SSL 后，将 `www` 301 到 apex；canonical 始终为 `https://weicangliving.com`。
+5. 等待验证与 SSL 后，将 apex 301 到 `www`；canonical 始终为 `https://www.weicangliving.com`。
 
 ## Launch Checklist
 
@@ -44,4 +44,4 @@ pnpm start
 - 检查 sitemap、robots、canonical、OG、favicon、404、mailto、所有内外链接。
 - 检查 390 / 430 / 768 / 1024 / 1440 / 1920 宽度和 reduced motion。
 - 确认 `_source/` / `底稿/` 不进入 Git 与 Vercel 部署。
-- 验证 HTTPS、www redirect，并确认 Cloudflare Email Routing 仍正常收信。
+- 验证 HTTPS、apex → www redirect，并确认 Cloudflare Email Routing 仍正常收信。
