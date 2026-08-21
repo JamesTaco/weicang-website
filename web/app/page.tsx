@@ -1,0 +1,23 @@
+import Image from "next/image";
+import Link from "next/link";
+import { ContactCTA, Photo, SectionIntro, StatusBadge } from "@/components/UI";
+import { businesses, events } from "@/content/home";
+import { siteConfig } from "@/content/site";
+
+export default function Home() { return <>
+  <section className="home-hero">
+    <Image src="/assets/photos/guizhou-mountain-hero.jpg" alt="云雾中的贵州山野与茶园" fill priority sizes="100vw" />
+    <div className="hero-shade" /><div className="hero-content"><p className="eyebrow">中国新地方主义生活方式品牌</p><h1><span>味藏</span><b>WEICANG</b></h1><div className="hero-bottom"><div><p className="serif hero-slogan">从山野来，<br />到日常去。</p><p>From the mountains of Guizhou.<br />Into everyday life.</p></div><div className="hero-actions"><Link className="button button--light" href="/about">认识味藏</Link><Link className="button button--ghost" href={siteConfig.dongfanUrl}>探索东梵青抹 ↗</Link></div></div></div>
+  </section>
+  <section className="belief"><p>01 / BRAND BELIEF</p><h2 className="serif">地方不是过去式，<br /><em>而是下一代生活方式的起点。</em></h2><div className="belief-copy"><p>Local is not the past.<br />It is where the next way of living begins.</p><p>味藏从贵州出发，重新发现地方真正有价值的食材、风味、人、文化与生活方式，让地方重新进入当代日常。</p></div></section>
+  <section className="what"><SectionIntro index="02" label="WHAT IS WEICANG" title={<>别人做土特产。<br /><span>味藏做地方进入日常。</span></>} /><p className="eyebrow">NOT ANOTHER LOCAL-FOOD COMPANY.</p><div className="keyword-line">{["品牌","产品","内容","原产地","社群与渠道","AI"].map((x,i)=><span key={x}><small>0{i+1}</small>{x}</span>)}</div><p className="local-flow">LOCAL <i>→</i> EVERYDAY LIFE</p></section>
+  <section className="businesses"><SectionIntro index="03" label="OUR WORK" title="Three Businesses." /><div className="business-list">{businesses.map((b)=><Link href={b.href} className="business-row" key={b.index}><span>{b.index}</span><div><h3>{b.title}</h3><p>{b.en}</p></div><p>{b.copy}</p><b>↗</b></Link>)}</div></section>
+  <section className="dongfan-feature"><div className="dongfan-copy"><p className="eyebrow">04 / FLAGSHIP CATEGORY BRAND</p><Image src="/assets/brand/dongfan-matcha-logo.png" alt="东梵青抹" width={1400} height={500} /><p>DONGFAN MATCHA — by WEICANG</p><h2 className="serif">从卖抹茶，<br />升级为经营一段年度关系。</h2><p>A tea garden. Four seasons.<br />A relationship you can come back to.</p><Link className="button button--dark" href={siteConfig.dongfanUrl}>进入东梵青抹 ↗</Link></div><Photo src="/assets/photos/tea-hands.jpg" alt="茶园里正在采摘茶叶的双手" /></section>
+  <section className="journey"><SectionIntro index="05" label="RELATIONSHIP LOOP" title={<>从山里来，<br />在城市发生，再回到原产地。</>} /><div className="journey-line">{[["ORIGIN","梵净山","茶园 / 认养 / 山居"],["CITY","贵阳","地方风味 / 社群 / 产业"],["COMMUNITY","深圳","产品测试 / 内容 / 渠道"],["ORIGIN","回到山里","长期关系"]].map((x,i)=><div key={i}><small>0{i+1}</small><h3>{x[0]}</h3><strong>{x[1]}</strong><p>{x[2]}</p>{i<3&&<i>→</i>}</div>)}</div><p className="plan-note">WEICANG PLACES · PLAN / PARTNER-BASED — 尚未确认开业的空间不作为实体门店陈述。</p></section>
+  <section className="network"><p className="eyebrow">06 / FIVE-LAYER NETWORK</p><h2 className="serif">我们建立的是地方、人、品牌、渠道与生活之间的长期关系。</h2><div>{[["PEOPLE","人"],["COMMUNITY","社群"],["CHANNEL","渠道"],["INSTITUTION","机构"],["PLACES","空间"]].map(([e,c],i)=><span key={e}><small>0{i+1}</small><b>{e}</b>{c}</span>)}</div></section>
+  <section className="ai-section"><div><p className="eyebrow">07 / WEICANG AI</p><h2>味藏 AI</h2><p className="serif">AI 是发动机，<br />不是汽车品牌。</p></div><div><p>AI stays backstage.<br />Flavor, people and place stay on the front.</p><ul>{["Flavor Knowledge","Product Innovation","Content Generation","Brand Growth","Channel Discovery","IP Content","Global Adaptation","Travel / Experience"].map((x,i)=><li key={x}><span>0{i+1}</span>{x}</li>)}</ul></div></section>
+  <section className="events-preview"><SectionIntro index="08" label="EVENT IP" title="Every year, we bring the ecosystem together." /><div className="event-grid">{events.map(e=><article key={e.title}><StatusBadge>2027 PLAN / 规划中</StatusBadge><p>{e.date} · {e.place}</p><h3>{e.title}</h3><p>{e.copy}</p><strong>{e.scale}</strong></article>)}</div><Link className="text-link" href="/events">查看年度事件 ↗</Link></section>
+  <section className="proof"><SectionIntro index="09" label="CURRENT PROGRESS" title="做成的，与正在去做的。" /><div className="proof-grid"><div><StatusBadge>DONE</StatusBadge>{["味藏品牌与业务体系形成","合作产品「抹茶气泡米酒」上线","AI 工作流及核心 Demo 阶段性搭建","国内外内容矩阵开始运营","渠道数据库建立"].map(x=><p key={x}>{x}</p>)}</div><div><StatusBadge>RECOGNITION</StatusBadge><p>第六届深圳市退役军人创新创业大赛 · 三等奖</p><p>鲲鹏青年项目</p><p>小镇青年达人秀 · 全国 50 强</p><p>未来餐桌产业联盟相关参与</p></div></div></section>
+  <ContactCTA />
+  </>; }
+
