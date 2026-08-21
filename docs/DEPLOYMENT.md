@@ -19,8 +19,8 @@ pnpm start
 ## GitHub Pages（当前方案）
 
 - Next.js 使用 `output: export` 生成 `web/out/` 静态站点。
-- `.github/workflows/deploy-pages.yml` 在 `main` 分支更新时自动构建和发布。
-- GitHub 仓库 Settings → Pages → Source 选择 `GitHub Actions`。
+- 本地构建后将 `web/out/` 推送到独立的 `gh-pages` 分支，不依赖 GitHub Actions 或 workflow Token 权限。
+- GitHub 仓库 Settings → Pages → Source 选择 `Deploy from a branch`，分支选择 `gh-pages`、目录选择 `/(root)`。
 - `web/public/CNAME` 固定正式域名为 `weicangliving.com`。
 - Cloudflare apex 与 `www` 按 GitHub Pages 提供的 DNS 要求配置；保留所有邮件记录。
 
