@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+
+Host: https://www.weicangliving.com
+Sitemap: https://www.weicangliving.com/sitemap.xml
