@@ -23,3 +23,25 @@ body{font-family:Geist,Inter,"Noto Sans CJK SC","Source Han Sans SC","PingFang S
 .upcoming-preview{display:grid;grid-template-columns:1.25fr .75fr;min-height:620px;background:var(--forest);color:var(--ivory)}.upcoming-preview>div{padding:clamp(4rem,8vw,8rem) clamp(1.3rem,5vw,5rem);align-self:center}.upcoming-preview>div>p{max-width:44rem;line-height:1.8}.upcoming-preview h2{font-size:clamp(2.6rem,5vw,5.5rem);line-height:1.12;margin:2rem 0}.upcoming-preview figure{position:relative;margin:0;min-height:620px;overflow:hidden}.journal-feature{display:grid;grid-template-columns:.7fr 1.2fr 1fr;gap:3rem;padding:4rem 0;border-top:1px solid;background:var(--paper)}.journal-feature h2{font-size:clamp(2rem,4vw,4rem);margin:0}.journal-feature>p:last-child{line-height:1.8}.journal-feature span{display:inline-block;margin-top:1.5rem;border-bottom:1px solid}.event-story{padding:clamp(5rem,9vw,9rem) clamp(1.3rem,5vw,5rem);display:grid;grid-template-columns:minmax(240px,.65fr) 1.35fr;gap:8vw}.event-facts{border-top:1px solid;padding-top:1rem}.event-facts p{display:grid;grid-template-columns:5rem 1fr;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--line);margin:0}.event-copy{max-width:48rem}.event-copy h2{font-size:clamp(2.2rem,4vw,4.5rem);line-height:1.2}.event-copy p{font-size:1.05rem;line-height:1.9}.event-quote{font-size:clamp(1.7rem,3vw,3rem)!important;color:var(--forest);margin:4rem 0}.event-image{position:relative;margin:0;min-height:min(78vw,850px);background:var(--paper)}.event-image img{object-fit:contain}.event-note{padding:2rem clamp(1.3rem,5vw,5rem);background:var(--paper);color:var(--muted);font-size:.78rem}
 @media(max-width:900px){.upcoming-preview,.event-story{grid-template-columns:1fr}.upcoming-preview figure{min-height:110vw}.journal-feature{grid-template-columns:1fr}.event-story{gap:3rem}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+/* Bilingual local growth service cards */
+.service-words{border-top:1px solid rgba(255,255,255,.2);border-left:1px solid rgba(255,255,255,.2)}
+.service-words article{min-width:0;min-height:180px;padding:1.2rem 1.25rem 1.4rem;border:0;border-right:1px solid rgba(255,255,255,.2);border-bottom:1px solid rgba(255,255,255,.2);display:flex;flex-direction:column;justify-content:space-between;transition:background-color .3s,color .3s,transform .3s}
+.service-words article:nth-child(3n+2){background:rgba(255,255,255,.025)}
+.service-words article:hover{background:var(--matcha);color:var(--deep);transform:translateY(-4px)}
+.service-words small{font-size:.64rem;letter-spacing:.14em;color:var(--matcha-light)}
+.service-words article:hover small{color:var(--deep)}
+.service-words div{display:flex;align-items:end;justify-content:space-between;gap:1rem}
+.service-words span{padding:0;border:0;font-size:clamp(1.25rem,1.8vw,1.8rem);letter-spacing:-.035em;line-height:1}
+.service-words b{font-size:.84rem;font-weight:400;letter-spacing:.12em;color:#aeb8b1;white-space:nowrap}
+.service-words article:hover b{color:var(--deep)}
+.services>.case-study article{max-width:50rem;border-top:1px solid rgba(255,255,255,.3);padding-top:3rem}
+@media(max-width:560px){.service-words{grid-template-columns:1fr 1fr}.service-words article{min-height:145px;padding:1rem}.service-words div{align-items:start;flex-direction:column;gap:.65rem}.service-words span{font-size:1.25rem}.service-words b{font-size:.76rem}}
+
+/* Bilingual AI capability list */
+.ai-statement{line-height:1.65}
+.ai-statement small{display:block;margin-top:.7rem;color:var(--muted);font-size:.82rem;letter-spacing:.04em}
+.ai-section li{align-items:baseline}
+.ai-section li>b{font-size:1rem;font-weight:500}
+.ai-section li>small{margin-left:auto;color:var(--muted);font-size:.82rem;letter-spacing:.08em}
+@media(max-width:560px){.ai-section li{display:grid;grid-template-columns:2rem 1fr auto;gap:.6rem;padding-inline:.25rem}.ai-section li>small{font-size:.76rem;letter-spacing:.04em}}
